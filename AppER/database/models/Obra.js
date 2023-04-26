@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
   };
   let config = {
     tableName: "obras",
-    timeStamps: false
+    timestamps: false
   };
   const Obra = sequelize.define(alias, cols, config);
 
@@ -42,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
     });
     Obra.hasMany(models.Imagen,{
       as: "imagenes",
-      foreignKey:"imagen_id"
+      foreignKey:"obra_id"
     })
 
   };

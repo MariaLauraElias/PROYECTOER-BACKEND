@@ -4,18 +4,18 @@ const Obras = db.Obra;
 
 const obraController ={
 
-  list: (req,res)=>{
+  obras: (req,res)=>{
     Obras.findAll({
       include: [{association: "clientes"}, {association: "materiales"},{association:"trabajos"}, {association:"imagenes"}]
-  })
-  .then(obras => {
-
-        console.log(obras)
+    })
+    .then((obras)=>{
+      return res.status(200).json({
+        total: obras.length,
+        data: obras,
+        status: 200
       })
-
-    
+    })    
   }
-
-  }
+}
 
 module.exports = obraController;
