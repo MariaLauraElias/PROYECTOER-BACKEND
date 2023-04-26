@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
   const Imagen = sequelize.define(alias, cols, config);
 
   Imagen.associate = function(models){
-    Material.belongsTo(models.Obra, {
+   Imagen.belongsTo(models.Obra, {
         as:"obras",
         foreignKey: "obra_id"
     })
